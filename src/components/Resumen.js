@@ -7,7 +7,7 @@ class Resumen extends Component {
     if (!marca || !ano || !plan) return null;
 
     return (
-      <div>
+      <div className="alert alert-info mt-5">
         <h2>Resumen de Cotizacion</h2>
         <li>
           <b>Marca:</b> {marca}

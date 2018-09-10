@@ -2,9 +2,9 @@ import React from "react";
 
 const Header = props => {
   return (
-    <header>
+    <nav className="navbar navbar-expand-lg navbar-light bg-light mb-5">
       <h2>{props.titulo}</h2>
-    </header>
+    </nav>
   );
 };
 

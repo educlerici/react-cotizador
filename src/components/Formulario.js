@@ -32,18 +32,17 @@ class Formulario extends Component {
   render() {
     return (
       <form onSubmit={this.cotizarSeguro}>
-        <div className="campo">
-          <label>Marca</label>
+        <div className="form-group">
+          <label className="mr-3">Marca</label>
           <select name="marca" ref={this.marcaRef}>
             <option value="Americano">Americano</option>
             <option value="Europeo">Europeo</option>
             <option value="Asiatico">Asiatico</option>
           </select>
         </div>
-        <br />
 
-        <div className="campo">
-          <label>Año</label>
+        <div className="form-group">
+          <label className="mr-3">Año</label>
           <select name="ano" ref={this.anoRef}>
             <option value="2010">2010</option>
             <option value="2011">2011</option>
@@ -56,33 +55,30 @@ class Formulario extends Component {
             <option value="2018">2018</option>
           </select>
         </div>
-        <br />
 
-        <div className="campo">
-          <label>Plan:</label>
-          <br />
-          <br />
+        <div className="form-group">
+          <label className="mr-3">Plan:</label>
           <input
             type="radio"
             name="plan"
             value="Basico"
             ref={this.planBasicoRef}
+            className="mr-3"
           />{" "}
           Basico
-          <br />
           <input
             type="radio"
             name="plan"
             value="Completo"
             ref={this.planCompletoRef}
+            className="ml-3"
           />{" "}
           Completo
         </div>
 
-        <br />
-        <br />
-
-        <button type="submit">Cotizar</button>
+        <button className="btn btn-primary" type="submit">
+          Cotizar
+        </button>
       </form>
     );
   }

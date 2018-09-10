@@ -1,15 +1,11 @@
 import React, { Component } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./Header";
 import Formulario from "./Formulario";
 import Resumen from "./Resumen";
 import Resultado from "./Resultado";
 
-import {
-  diferenciaAno,
-  obtenerDiferenciaAno,
-  calcularMarca,
-  obtenerPlan
-} from "../helper";
+import { obtenerDiferenciaAno, calcularMarca, obtenerPlan } from "../helper";
 
 class App extends Component {
   state = {
@@ -56,12 +52,18 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <h1>Desde el componente App</h1>
+      <div>
         <Header titulo="Cotizador de Autos" />
-        <Formulario cotizarSeguro={this.cotizarSeguro} />
-        <Resumen datos={this.state.datos} resultado={this.state.resultado} />
-        <Resultado resultado={this.state.resultado} />
+
+        <div className="container mb-4">
+          <p className="font-weight-light">
+            Seleccionar los valores en el siguiente formulario para cotizar tu
+            vehiculo
+          </p>
+          <Formulario cotizarSeguro={this.cotizarSeguro} />
+          <Resumen datos={this.state.datos} resultado={this.state.resultado} />
+          <Resultado resultado={this.state.resultado} />
+        </div>
       </div>
     );
   }
